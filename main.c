@@ -11,7 +11,8 @@ void menu() {
     printf("5. Imprimir Lista\n");
     printf("6. Verificar se a Lista está Vazia\n");
     printf("7. Verificar se a Lista está Cheia\n");
-    printf("8. Encerrar\n");
+    printf("8. Obter Tamanho da Lista\n");
+    printf("9. Encerrar\n");
 }
 
 int main() {
@@ -101,16 +102,23 @@ int main() {
                 }
                 break;
             case 8:
-                printf("Encerrando...\n");
-                if (lista != NULL) {
-                    free(lista->vetor);
-                    free(lista);
-                }
-                exit(0);
-            default:
-                printf("Opcao invalida!\n");
-        }
-    }
+                if (lista == NULL) {
+                    printf("Crie a lista primeiro!\n");
+                } else {
+                    printf("Tamanho da lista: %d\n", tamanho_lista(lista)); // Nova opção para obter tamanho
+            }
+            break;
+        case 9:
+            printf("Encerrando...\n");
+            if (lista != NULL) {
+                free(lista->vetor);
+                free(lista);
+            }
+            exit(0);
+        default:
+            printf("Opcao invalida!\n");
+}
+
 
     return 0;
 }
