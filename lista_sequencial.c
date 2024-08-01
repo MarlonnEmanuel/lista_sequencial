@@ -35,7 +35,7 @@ void inserir_elemento(ListaSequencial* lista, int posicao, int valor) {
         printf("Lista cheia!\n");
         exit(1);
     }
-    if (posicao < 1 || posicao > lista->quantidade + 1) {
+    if ((posicao < 1 || posicao > lista->quantidade + 1) || (posicao >= lista->capacidade)) {
         printf("Posição inválida\n");
         exit(1);
     }
