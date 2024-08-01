@@ -27,7 +27,7 @@ int main() {
         switch (opcao) {
             case 1:
                 if (lista != NULL) {
-                    printf("Lista ja criada!\n");
+                    printf("Lista já criada!\n");
                 } else {
                     printf("Digite a capacidade da lista: ");
                     scanf("%d", &capacidade);
@@ -39,7 +39,7 @@ int main() {
                 if (lista == NULL) {
                     printf("Crie a lista primeiro!\n");
                 } else {
-                    printf("Digite a posicao para inserir (1 a %d): ", lista->quantidade + 1);
+                    printf("Digite a posição para inserir (1 a %d): ", lista->quantidade + 1);
                     scanf("%d", &posicao);
                     printf("Digite o valor a ser inserido: ");
                     scanf("%d", &valor);
@@ -52,7 +52,7 @@ int main() {
                 if (lista == NULL) {
                     printf("Crie a lista primeiro!\n");
                 } else {
-                    printf("Digite a posicao para modificar (1 a %d): ", lista->quantidade);
+                    printf("Digite a posição para modificar (1 a %d): ", lista->quantidade);
                     scanf("%d", &posicao);
                     printf("Digite o novo valor: ");
                     scanf("%d", &valor);
@@ -65,7 +65,7 @@ int main() {
                 if (lista == NULL) {
                     printf("Crie a lista primeiro!\n");
                 } else {
-                    printf("Digite a posicao para retirar (1 a %d): ", lista->quantidade);
+                    printf("Digite a posição para retirar (1 a %d): ", lista->quantidade);
                     scanf("%d", &posicao);
                     valor = retirar_elemento(lista, posicao);
                     printf("Elemento retirado: %d\n", valor);
@@ -106,21 +106,19 @@ int main() {
                     printf("Crie a lista primeiro!\n");
                 } else {
                     printf("Tamanho da lista: %d\n", tamanho_lista(lista)); // Nova opção para obter tamanho
-            }
-            break;
-        case 9:
-            printf("Encerrando...\n");
-            if (lista != NULL) {
-                free(lista->vetor);
-                free(lista);
-            }
-            exit(0);
-        default:
-            printf("Opcao invalida!\n");
-}
-
+                }
+                break;
+            case 9:
+                printf("Encerrando...\n");
+                if (lista != NULL) {
+                    free(lista->vetor);
+                    free(lista);
+                }
+                exit(0);
+            default:
+                printf("Opção inválida!\n");
+        }
+    }
 
     return 0;
 }
-
-
