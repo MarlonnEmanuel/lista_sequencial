@@ -9,18 +9,20 @@ void menu() {
     printf("3. Modificar Elemento\n");
     printf("4. Retirar Elemento\n");
     printf("5. Imprimir Lista\n");
-    printf("6. Encerrar\n");
+    printf("6. Verificar se a Lista está Vazia\n");
+    printf("7. Verificar se a Lista está Cheia\n");
+    printf("8. Encerrar\n");
 }
 
 int main() {
     ListaSequencial* lista = NULL;
     int opcao, capacidade, posicao, valor;
-    
+
     while (1) {
         menu();
         printf("Escolha uma opcao: ");
         scanf("%d", &opcao);
-        
+
         switch (opcao) {
             case 1:
                 if (lista != NULL) {
@@ -77,6 +79,28 @@ int main() {
                 }
                 break;
             case 6:
+                if (lista == NULL) {
+                    printf("Crie a lista primeiro!\n");
+                } else {
+                    if (lista_vazia(lista)) {
+                        printf("A lista está vazia.\n");
+                    } else {
+                        printf("A lista não está vazia.\n");
+                    }
+                }
+                break;
+            case 7:
+                if (lista == NULL) {
+                    printf("Crie a lista primeiro!\n");
+                } else {
+                    if (lista_cheia(lista)) {
+                        printf("A lista está cheia.\n");
+                    } else {
+                        printf("A lista não está cheia.\n");
+                    }
+                }
+                break;
+            case 8:
                 printf("Encerrando...\n");
                 if (lista != NULL) {
                     free(lista->vetor);
